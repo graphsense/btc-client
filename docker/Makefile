@@ -1,9 +1,7 @@
 install:
-	if [ ! -d bitcoin ]; then \
-		git clone https://github.com/bitcoin/bitcoin.git src && \
-		cd src && \
-		git checkout tags/v0.16.0 -b local && \
-		./autogen.sh && \
-		./configure --without-gui --disable-zmq --disable-upnp-default --disable-tests --disable-wallet && \
-		make install; \
-	fi
+	git clone https://github.com/bitcoin/bitcoin.git src && \
+	cd src && \
+	git checkout tags/v0.16.0 -b local && \
+	./autogen.sh && \
+	./configure --without-gui --disable-zmq --disable-upnp-default --disable-tests --disable-wallet && \
+	make install

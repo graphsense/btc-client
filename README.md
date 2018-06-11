@@ -23,7 +23,7 @@ Make sure your config file includes the following line:
 
 ## Usage
 
-Building the docker container (latest tagged GitHub version of Bitcoin):
+Building the docker container (tagged GitHub version if Bitcoin in `docker/Makefile`):
 
     ./docker/build.sh
 

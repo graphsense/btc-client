@@ -10,7 +10,7 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
 ... on Mac OSX
 
-	brew install docker using [homebrew][homebrew]
+	brew install docker using [Homebrew][homebrew]
 
 ## Configuration
 

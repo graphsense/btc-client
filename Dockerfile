@@ -1,37 +1,34 @@
-FROM debian:8
-LABEL maintainer="mihai.bartha@ait.ac.at"
+FROM alpine:3.7
+LABEL maintainer="rainer.stuetz@ait.ac.at"
 
-################## BEGIN INSTALLATION ######################
-RUN apt-get update && apt-get install -y build-essential \
-    wget \
-    git \
-    automake \
-    autotools-dev \
-    bsdmainutils \
-    libboost-chrono-dev \
-    libboost-filesystem-dev \
-    libboost-program-options-dev \
-    libboost-system-dev \
-    libboost-test-dev \
-    libboost-thread-dev \
-    libevent-dev \
-    libminiupnpc-dev \
-    libprotobuf-dev \
-    libssl-dev \
-    libtool \
-    libzmq3-dev \
-    pkg-config \
-    protobuf-compiler
+RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \
+    useradd -r -u 10000 dockeruser &&  \
+    mkdir -p /opt/graphsense/data && \
+    chown dockeruser /opt/graphsense
 
-RUN mkdir -p /root/.bitcoin
-ADD docker/bitcoin.conf /root/.bitcoin/bitcoin.conf
+ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
+ADD docker/Makefile /tmp/Makefile
 
-ADD docker/Makefile /root/Makefile
-RUN cd /root; make install
+RUN apk --no-cache --virtual build-dependendencies add \
+        linux-headers \
+        libressl-dev \
+        g++ \
+        boost-dev \
+        file \
+        autoconf \
+        automake \
+        libtool \
+        libevent-dev \
+        git \
+        coreutils \
+        binutils \
+        grep && \
+    cd /tmp; make install && \
+    rm -rf /tmp/src && \
+    strip /usr/local/bin/*bitcoin* && \
+    apk del build-dependendencies
 
-VOLUME ["/root/.bitcoin"]
+USER dockeruser
 EXPOSE 8332
 
-CMD bitcoind -daemon -rest && bash
-
-##################### INSTALLATION END #####################
+CMD bitcoind -conf=/opt/graphsense/bitcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash

@@ -1,1 +1,3 @@
-docker exec bitcoin bash -c "tail -f /root/.bitcoin/debug.log"
+#!/bin/sh
+
+docker exec bitcoin bash -c "tail -f /opt/graphsense/data/debug.log"

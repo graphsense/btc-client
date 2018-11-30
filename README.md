@@ -8,9 +8,11 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
     sudo apt install docker.io
 
-... on Mac OSX using [Homebrew][homebrew]
+... on Mac OS using [Homebrew][homebrew]
 
     brew cask install docker
+
+Ensure that a user `dockeruser` with ID `10000` exists on your local system.
 
 ## Configuration
 
@@ -31,7 +33,7 @@ Building the docker container (tagged GitHub version of Bitcoin in `docker/Makef
 
     ./docker/build.sh
 
-Starting the container:
+Starting the container (DATA_DIR must belong to `dockeruser`):
 
     ./docker/start.sh DATA_DIR
 

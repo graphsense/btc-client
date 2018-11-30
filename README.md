@@ -8,9 +8,9 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
     sudo apt install docker.io
 
-... on Mac OSX
+... on Mac OSX using [Homebrew][homebrew]
 
-	brew install docker using [Homebrew][homebrew]
+    brew cask install docker
 
 ## Configuration
 

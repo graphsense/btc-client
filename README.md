@@ -8,6 +8,10 @@ Install [Docker][docker], e.g. on Debian/Ubuntu based systems
 
     sudo apt install docker.io
 
+... on Mac OSX
+
+	brew install docker using [homebrew][homebrew]
+
 ## Configuration
 
 Modify `docker/bitcoin.conf` according to your environment
@@ -42,3 +46,4 @@ Showing the Bitcoin log file:
 
 [docker]: https://www.docker.com/
 [bitcoin-conf]: https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File
+[homebrew]: https://brew.sh/

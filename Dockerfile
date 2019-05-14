@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8.4
 LABEL maintainer="rainer.stuetz@ait.ac.at"
 
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \

@@ -1,5 +1,5 @@
 FROM alpine:3.8.4
-LABEL maintainer="rainer.stuetz@ait.ac.at"
+LABEL maintainer="contact@graphsense.info"
 
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \
     useradd -r -u 10000 dockeruser &&  \

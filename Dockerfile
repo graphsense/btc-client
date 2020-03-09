@@ -1,4 +1,4 @@
-FROM alpine:3.8.4
+FROM alpine:3.11.3
 LABEL maintainer="contact@graphsense.info"
 
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \

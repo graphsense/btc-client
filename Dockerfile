@@ -29,6 +29,3 @@ RUN apk --no-cache --virtual build-dependendencies add \
     apk del build-dependendencies
 
 USER dockeruser
-EXPOSE 8332
-
-CMD bitcoind -conf=/opt/graphsense/bitcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash

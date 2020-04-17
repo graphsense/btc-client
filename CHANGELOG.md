@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## Unreleased
 ### Changed
 - Upgrade Alpine Linux base image
+- Add Docker Compose file
 
 ## [0.4.2] - 2019-12-19
 ### Changed

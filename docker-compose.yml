@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+
+  bitcoin-client:
+    image: bitcoin
+    container_name: bitcoin
+    hostname: bitcoin
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./data/:/opt/graphsense/data
+    networks:
+      - graphsense-net
+    ports:
+      - 8332:8332
+    command: ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
+    restart: always
+
+networks:
+  graphsense-net:
+    name: graphsense-global-net

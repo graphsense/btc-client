@@ -1,4 +1,4 @@
-FROM alpine:3.8.4
+FROM alpine:3.11
 LABEL maintainer="contact@graphsense.info"
 
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \
@@ -29,6 +29,3 @@ RUN apk --no-cache --virtual build-dependendencies add \
     apk del build-dependendencies
 
 USER dockeruser
-EXPOSE 8332
-
-CMD bitcoind -conf=/opt/graphsense/bitcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash

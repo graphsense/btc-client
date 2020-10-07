@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Use shallow clone with truncated history ([#6](https://github.com/graphsense/btc-client/issues/6))
 - Updated Bitcoin client to v0.20.1
+- Upgrade Alpine Linux base image (version 3.12)
 
 ## [0.4.4] - 2020-06-12
 ### Changed

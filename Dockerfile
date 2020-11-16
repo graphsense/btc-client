@@ -6,7 +6,6 @@ RUN apk --no-cache add make bash boost boost-program_options libevent libressl s
     mkdir -p /opt/graphsense/data && \
     chown -R dockeruser /opt/graphsense
 
-ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
 ADD docker/Makefile /tmp/Makefile
 
 RUN apk --no-cache --virtual build-dependendencies add \
@@ -27,6 +26,8 @@ RUN apk --no-cache --virtual build-dependendencies add \
     rm -rf /tmp/src && \
     strip /usr/local/bin/*bitcoin* && \
     apk del build-dependendencies
+
+ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
 
 USER dockeruser
 CMD ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]

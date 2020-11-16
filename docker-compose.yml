@@ -15,7 +15,6 @@ services:
       - graphsense-net
     ports:
       - 8332:8332
-    command: ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
     restart: always
 
 networks:

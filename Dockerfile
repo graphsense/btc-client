@@ -1,8 +1,10 @@
 FROM alpine:3.12
 LABEL maintainer="contact@graphsense.info"
 
+ARG UID=10000
+
 RUN apk --no-cache add make bash boost boost-program_options libevent libressl shadow && \
-    useradd -r -u 10000 dockeruser &&  \
+    useradd -r -u $UID dockeruser &&  \
     mkdir -p /opt/graphsense/data && \
     chown -R dockeruser /opt/graphsense
 

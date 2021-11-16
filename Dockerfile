@@ -29,7 +29,5 @@ RUN apk --no-cache --virtual build-dependendencies add \
     strip /usr/local/bin/*bitcoin* && \
     apk del build-dependendencies
 
-ADD docker/bitcoin.conf /opt/graphsense/bitcoin.conf
-
 USER dockeruser
-CMD ["bitcoind", "-conf=/opt/graphsense/bitcoin.conf", "-datadir=/opt/graphsense/data", "-rest"]
+CMD ["bitcoind", "-conf=/opt/graphsense/client.conf", "-datadir=/opt/graphsense/data", "-rest"]

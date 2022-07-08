@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.0] - 2022-07-08
+### Changed
+- Updated Bitcoin client to v23.0
+- Upgrade Alpine Linux base image (version 3.16)
+
 ## [0.5.2] - 2022-03-08
 
 ## [0.5.1] - 2021-11-17

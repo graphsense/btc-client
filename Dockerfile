@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.16
 LABEL maintainer="contact@graphsense.info"
 
 ARG UID=10000

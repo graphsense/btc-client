@@ -3,9 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [22.11] - Unreleased
+## [22.11] - 2022-11-24
 ### Changed
 - Updated Bitcoin client to v24.0
+
+## [22.10] - 2022-10-10
 
 ## [1.0.0] - 2022-07-08
 ### Changed

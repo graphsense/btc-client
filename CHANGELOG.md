@@ -3,8 +3,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [23.01/1.3.0] - 2023-12-30
+## [23.01/1.3.0] - 2023-01-30
 ### Added
+- bumped version to 24.0.0 -> 24.0.1
 - standard dev Makefile
 
 ## [22.11] - 2022-11-24

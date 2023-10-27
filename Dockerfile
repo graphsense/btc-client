@@ -1,5 +1,9 @@
 FROM alpine:3.16
-LABEL maintainer="contact@graphsense.info"
+LABEL org.opencontainers.image.title="btc-client"
+LABEL org.opencontainers.image.maintainer="contact@ikna.io"
+LABEL org.opencontainers.image.url="https://www.ikna.io/"
+LABEL org.opencontainers.image.description="Dockerized Bitcoin client"
+LABEL org.opencontainers.image.source="https://github.com/graphsense/btc-client"
 
 ARG UID=10000
 

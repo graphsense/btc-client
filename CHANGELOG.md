@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [23.06/1.3.3] - 2023-06-18
+### Changed
+- Updated Bitcoin client to v26.0
+
 ## [23.09/1.3.2] - 2023-09-20
 ### Changed
 - setup automatic docker file publish on github packages

@@ -1,5 +1,5 @@
 RELEASE := 'v24.01.0'
-RELEASESEM := 'v1.3.3'
+# RELEASESEM := 'v1.3.3'
 
 all: build
 
@@ -10,7 +10,7 @@ run:
 	docker-compose up -d
 
 tag-version:
-	-git diff --exit-code && git diff --staged --exit-code && git tag -a $(RELEASE) -m 'Release $(RELEASE)' || (echo "Repo is dirty please commit first" && exit 1)
+# 	-git diff --exit-code && git diff --staged --exit-code && git tag -a $(RELEASE) -m 'Release $(RELEASE)' || (echo "Repo is dirty please commit first" && exit 1)
 	git diff --exit-code && git diff --staged --exit-code && git tag -a $(RELEASESEM) -m 'Release $(RELEASE)' || (echo "Repo is dirty please commit first" && exit 1)
 
 

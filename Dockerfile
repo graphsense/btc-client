@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.20
 LABEL org.opencontainers.image.title="btc-client"
 LABEL org.opencontainers.image.maintainer="contact@ikna.io"
 LABEL org.opencontainers.image.url="https://www.ikna.io/"
@@ -27,6 +27,7 @@ RUN apk --no-cache --virtual build-dependendencies add \
         git \
         coreutils \
         binutils \
+        cmake \
         grep && \
     cd /tmp; make install && \
     rm -rf /tmp/src && \

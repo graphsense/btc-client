@@ -1,6 +1,7 @@
 install:
-	git clone --depth=1 -b v28.1 https://github.com/bitcoin/bitcoin.git src && \
+	git clone --depth=1 -b v29.0 https://github.com/bitcoin/bitcoin.git src && \
 	cd src && \
-	./autogen.sh && \
-	./configure --without-gui --disable-zmq --disable-upnp-default --disable-tests --disable-wallet && \
-	make install
+	cmake -B build -DENABLE_WALLET=OFF -DBUILD_UTIL=OFF -DTEST_UTIL=OFF -DBUILD_GUI=OFF && \
+	cmake --build build && \
+	cp build/bin/* /usr/local/bin/ && \
+	ls -al /usr/local/bin/

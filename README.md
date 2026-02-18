@@ -12,7 +12,7 @@ Ensure that a user `dockeruser` with ID `10000` exists on your local system.
 
 ## Configuration
 
-Modify `docker/bitcoin.conf` according to your environment
+Modify `docker/client.conf` according to your environment
 (see [doc][bitcoin-conf]).
 
 Configure `rpcallowip=...` to allow the client/daemon to accept
